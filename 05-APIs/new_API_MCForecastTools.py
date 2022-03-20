@@ -46,6 +46,8 @@ class MCSimulation:
         """
         
         
+        portfolio_data = pd.pivot_table(portfolio_data, values=['close'], columns='symbol', index=portfolio_data.index)
+        
         # Check to make sure that all attributes are set
         if not isinstance(portfolio_data, pd.DataFrame):
             raise TypeError("portfolio_data must be a Pandas DataFrame")
